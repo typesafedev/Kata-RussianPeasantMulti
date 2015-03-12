@@ -44,16 +44,22 @@
         {
             this.LogStep(x1, x2);
 
+            if (x1 == 0)
+            {
+                return 0;
+            }
+
             if (Math.Abs(x1) == 1)
             {
                 return x2;
             }
 
             if (x1 % 2 != 0)
-            {
+            { // x1 is odd so use x2 in sum to result and get next value
                 return x2 + this.RussianMultiply(x1 / 2, x2 * 2);
             }
 
+            // x1 is even so don't use x2 in sum, just get the next value
             return this.RussianMultiply(x1 / 2, x2 * 2);
         }
 

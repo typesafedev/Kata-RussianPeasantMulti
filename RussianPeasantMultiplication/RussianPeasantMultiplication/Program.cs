@@ -8,6 +8,9 @@
     class Program
     {
         private static RussianPeasantMultiplier russianPeasantMultiplier;
+        
+        const int MainPause = 750;
+        const int StepPause = 350;
 
         static void Main(string[] args)
         {
@@ -61,7 +64,7 @@
         private static void Pause()
         {
             Console.WriteLine();
-            Thread.Sleep(750);
+            Thread.Sleep(MainPause);
         }
 
         private static void WriteSteps(IDictionary<int, int> steps)
@@ -69,7 +72,7 @@
             foreach (var step in steps)
             {
                 WriteStep(step);
-                Thread.Sleep(350);
+                Thread.Sleep(StepPause);
             }
         }
 

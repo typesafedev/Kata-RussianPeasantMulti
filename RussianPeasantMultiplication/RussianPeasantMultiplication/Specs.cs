@@ -3,6 +3,8 @@
     using Machine.Fakes;
     using Machine.Specifications;
 
+    using Moq.Language;
+
     internal abstract class Russian_peasant_multiplier_specs_base : WithSubject<RussianPeasantMultiplier>
     {
         protected static int x1;
@@ -177,5 +179,27 @@
         public It Should_not_add_steps_to_the_log = () => Subject.Steps.ShouldBeEmpty();
 
         public It Should_return_the_correct_result = () => Result.ShouldEqual(x1 * x2);
+    }
+
+    class When_x1_or_x2_is_0 : Russian_peasant_multiplier_specs_base
+    {
+        private Establish context = () =>
+            {
+                x1 = 0;
+                x2 = 25;
+            };
+
+        public It Should_return_0 = () => Result.ShouldEqual(0);
+    }
+
+    class When_x1_and_x2_is_0 : Russian_peasant_multiplier_specs_base
+    {
+        private Establish context = () =>
+            {
+                x1 = 0;
+                x2 = 0;
+            };
+
+        public It Should_return_0 = () => Result.ShouldEqual(0);
     }
 }
