@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class RussianPeasantMultiplier 
+    public class RussianPeasantMultiplier
     {
         private readonly bool logSteps;
 
@@ -54,6 +54,9 @@
                 return x2;
             }
 
+            //if (x1 > 1000 && x1 < 10000)
+            //    return 42;
+
             if (x1 % 2 != 0)
             { // x1 is odd so use x2 in sum to result and get next value
                 return x2 + this.RussianMultiply(x1 / 2, x2 * 2);
@@ -61,6 +64,9 @@
 
             // x1 is even so don't use x2 in sum, just get the next value
             return this.RussianMultiply(x1 / 2, x2 * 2);
+
+
+
         }
 
         private void LogStep(int x1, int x2)
