@@ -117,10 +117,11 @@
     <Compile Include="PerformanceTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClassicSpecs.cs" />
     <Compile Include="PropertyBasedSpecs.cs" />
     <Compile Include="RussianPeasantMultiplier.cs" />
-    <Compile Include="Specs.cs" />
-    <Compile Include="Xspecs.cs" />
+    <Compile Include="BehaviourSpecs.cs" />
+    <Compile Include="FluentSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

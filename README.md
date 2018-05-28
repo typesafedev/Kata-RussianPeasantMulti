@@ -1,4 +1,4 @@
-# Kata Russian Peasant Multication
+# Kata Russian Peasant Multiplication
 It is said that Russian peasants multiply using a most curious method, They start by writing the two numbers to be multiplied at the head of two columns. Then they repeatedly divide the number in the left column by two (dropping any remainder) and double the number in the right column, writing the two new numbers immediately below their predecessors, until the number in the left column is one. Then they cross out all rows where the number in the left column is even, and add the remaining numbers in the right column, which is the desired product. For instance, the product eighteen times twenty-three is found like this.
 
 http://img.thedailywtf.com/images/200907/RussianPeasant.gif

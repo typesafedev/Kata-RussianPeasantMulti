@@ -38,7 +38,7 @@
         public It Should_return_x_multiplied_by_2 = () => Result.ShouldEqual(2 * x2);
     }
 
-    internal class When_mulitplying_x_and_2 : Russian_peasant_multiplier_specs_base
+    internal class When_multiplying_x_and_2 : Russian_peasant_multiplier_specs_base
     {
         private Establish context = () =>
             {

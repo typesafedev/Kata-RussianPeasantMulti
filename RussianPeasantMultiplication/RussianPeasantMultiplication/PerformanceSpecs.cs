@@ -5,7 +5,7 @@
     using Xunit;
 
     //Questionable utility. Test machine will have to be stable for this to work.
-    public class PerformanceTests
+    public class PerformanceSpecs
     {
         [Fact]
         public void ObjectOrientedMultiply()
