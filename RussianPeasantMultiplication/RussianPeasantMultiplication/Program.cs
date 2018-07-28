@@ -28,6 +28,10 @@
                 }
             }
 
+            //var x = int.Parse(args[0]);
+            //var y = int.Parse(args[1]);
+            //Console.WriteLine(Functional.Multiply(x, y));
+
             Console.ReadLine();
         }
 

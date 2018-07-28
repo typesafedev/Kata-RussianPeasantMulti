@@ -8,11 +8,11 @@
     //Multiplication laws for real and complex numbers *** 
     public class PropertyBasedSpecs
     {
-        //This law does not hold for multiplication of matrices and quarternions - according to wikipedia
+        // This law does not hold for multiplication of matrices and quarternions - according to wikipedia
         [Property]
         public Property CommutativeLaw(int x, int y)
         {
-            // x * y = y + x
+            // x * y = y * x
             var sut = new RussianPeasantMultiplier();
             return (sut.Multiply(x, y) == sut.Multiply(y, x)).ToProperty();
         }
@@ -28,7 +28,7 @@
         [Property]
         public Property DistributiveLaw(int x, int y, int z)
         {
-            //x * (y + z) = (x * y) + (x * z)
+            // x * (y + z) = (x * y) + (x * z)
             var sut = new RussianPeasantMultiplier();
             return (sut.Multiply(x, y + z) == sut.Multiply(x, y) + sut.Multiply(x, z)).ToProperty();
         }
@@ -56,6 +56,8 @@
         [Property]
         public Property ZeroLaw(int x)
         {
+            // Zero is the absorbing element for multiplication - as opposed to addition which does not have an absorbing element
+            // https://en.wikipedia.org/wiki/Absorbing_element
             // 0 * x = 0
             // x * 0 = 0    //Right zero also proven if commutative property holds
             var sut = new RussianPeasantMultiplier();
@@ -65,7 +67,7 @@
         [Property(Verbose = true)]
         public Property PositiveOrderPreservationLaw(int x, int y, int z)
         {
-            //For x > 0, if y > z then x * y > x * z
+            // Forall x > 0, if y > z then x * y > x * z
             var sut = new RussianPeasantMultiplier();
             var lhs = sut.Multiply(x, y);
             var rhs = sut.Multiply(x, z);
@@ -76,7 +78,7 @@
         [Property]
         public Property NegativeOrderPreservationLaw(int x, int y, int z)
         {
-            //For x < 0, if y > z then x * y < x * z
+            // Forall x < 0, if y > z then x * y < x * z
             var sut = new RussianPeasantMultiplier();
             var lhs = sut.Multiply(x, y);
             var rhs = sut.Multiply(x, z);

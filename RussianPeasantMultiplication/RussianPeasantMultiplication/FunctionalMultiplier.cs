@@ -5,21 +5,20 @@
     using static System.Console;
     using static System.Math;
 
-    //Russian peasant multiplication wriiten in more functional style.
+    //Russian peasant multiplication written in a more functional style - hylomorphism lite
+    //https://maartenfokkinga.github.io/utwente/mmf91m.pdf
+    //Implementing peasant multiplication using true hylomorphism involves implementing an "algebra" seperate from the Fold and Unfold combinators unlike this implementation. 
     public static class Functional
     {
         private static IEnumerable<(int x, int y)> Unfold(int x, int y, Action<int, int> print)
         {
-            var x1 = x;
-            var y1 = y;
-
             while (true)
             {
-                print(x1, y1);
-                if (y1 == 0) { yield break; }
-                yield return (x1, y1);
-                x1 *= 2;
-                y1 /= 2;
+                print(x, y);
+                if (y == 0) { yield break; }
+                yield return (x, y);
+                x *= 2;
+                y /= 2;
             }
         }
 
@@ -54,7 +53,7 @@
             var products = Unfold(x, y, Print);
             var product = Fold(products, Print);
 
-            //Normalize product
+            //Normalize
             if (x > 0 == y > 0) { return Abs(product); }
 
             return -Abs(product);
