@@ -54,6 +54,7 @@
                 return x2;
             }
 
+            // Uncomment to induce a bug
             //if (x1 > 1000 && x1 < 10000)
             //    return 42;
 
